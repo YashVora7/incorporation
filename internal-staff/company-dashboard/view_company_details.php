@@ -366,10 +366,10 @@ $total_singapore_directors = mysqli_num_rows($result_total_singapore_directors);
                                     <p style="margin: 5px 0;"><strong>Designation:</strong> <?= $row_officer_data['officer_designation'] ?></p>
                                     <p style="margin: 5px 0;"><strong>Email:</strong> <?= $row_officer_data['officer_email_address'] ?></p>
                                     <p style="margin: 5px 0;"><strong>Contact:</strong> <?= $row_officer_data['officer_contact'] ?></p>
-                                    <p style="margin: 5px 0;"><strong>Shares:</strong> <?= $row_officer_data['percentage_of_shares'] ?></p>
+                                    <p style="margin: 5px 0;"><strong>Shares:</strong> <?= intval($row_officer_data['percentage_of_shares']) . '%' ?></p>
                                     <p style="margin: 5px 0;"><strong>Total Capital:</strong> <?= $row_officer_data['issued_share_capital_allocation'] ?></p>
                                     <p style="margin: 5px 0;"><strong>Type:</strong> <?= $row_officer_data['officer_type'] ?></p>
-                                    <p style="margin: 5px 0;"><strong>Citizenship:</strong> <?= $row_officer_data['is_singapore_citizen'] ?></p>
+                                    <p style="margin: 5px 0;"><strong>Nationality:</strong> <?= $row_officer_data['officer_passport_nationality'] ?></p>
                                     <div class=" d-flex">
                                          <!-- Download buttons -->
                                         <?php if (!empty($row_officer_data['business_registration_certificate_of_entity'])) { ?>
