@@ -31,7 +31,6 @@
 </head>
 
 <body id="body" class="light-mode">
-
   <div class="zubuz-preloader-wrap">
     <div class="zubuz-preloader">
       <div></div>
