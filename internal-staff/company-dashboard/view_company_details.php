@@ -371,32 +371,33 @@ $total_singapore_directors = mysqli_num_rows($result_total_singapore_directors);
                                     <p style="margin: 5px 0;"><strong>Type:</strong> <?= $row_officer_data['officer_type'] ?></p>
                                     <p style="margin: 5px 0;"><strong>Nationality:</strong> <?= $row_officer_data['officer_passport_nationality'] ?></p>
                                     <div class=" d-flex">
-                                         <!-- Download buttons -->
-                                        <?php if (!empty($row_officer_data['business_registration_certificate_of_entity'])) { ?>
+                                        <!-- Download buttons -->
+                                        <?php if (!empty($row_officer_data['business_registration_certificate_of_entity']) && $row_officer_data['business_registration_certificate_of_entity'] !== 'NA') { ?>
                                             <p style="margin: 5px 0;" class="mx-2">
-                                                <a href="<?= $baseUrl?>incorporation/uploads/<?= $row_officer_data['business_registration_certificate_of_entity'] ?>" download class="btn btn-primary">Download Business Registration Certificate</a>
+                                                <a href="<?= $baseUrl ?>incorporation/uploads/<?= $row_officer_data['business_registration_certificate_of_entity'] ?>" download class="btn btn-primary">Download Business Registration Certificate</a>
                                             </p>
                                         <?php } ?>
 
-                                        <?php if (!empty($row_officer_data['passport_image'])) { ?>
+                                        <?php if (!empty($row_officer_data['passport_image']) && $row_officer_data['passport_image'] !== 'NA') { ?>
                                             <p style="margin: 5px 0;">
-                                                <a href="<?= $baseUrl?>incorporation/uploads/<?= $row_officer_data['passport_image'] ?>" download class="btn btn-primary">Download Passport Image</a>
+                                                <a href="<?= $baseUrl ?>incorporation/uploads/<?= $row_officer_data['passport_image'] ?>" download class="btn btn-primary">Download Passport Image</a>
                                             </p>
                                         <?php } ?>
                                     </div>
                                     <div class=" d-flex">
-                                        <?php if (!empty($row_officer_data['proof_of_address_image'])) { ?>
+                                        <?php if (!empty($row_officer_data['proof_of_address_image']) && $row_officer_data['proof_of_address_image'] !== 'NA') { ?>
                                             <p style="margin: 5px 0;" class="mx-2">
-                                                <a href="<?= $baseUrl?>incorporation/uploads/<?= $row_officer_data['proof_of_address_image'] ?>" download class="btn btn-primary">Download Proof of Address</a>
+                                                <a href="<?= $baseUrl ?>incorporation/uploads/<?= $row_officer_data['proof_of_address_image'] ?>" download class="btn btn-primary">Download Proof of Address</a>
                                             </p>
                                         <?php } ?>
 
-                                        <?php if (!empty($row_officer_data['officer_nric_id_image'])) { ?>
+                                        <?php if (!empty($row_officer_data['officer_nric_id_image']) && $row_officer_data['officer_nric_id_image'] !== 'NA') { ?>
                                             <p style="margin: 5px 0;">
-                                                <a href="<?= $baseUrl?>incorporation/uploads/<?= $row_officer_data['officer_nric_id_image'] ?>" download class="btn btn-primary">Download NRIC ID Image</a>
+                                                <a href="<?= $baseUrl ?>incorporation/uploads/<?= $row_officer_data['officer_nric_id_image'] ?>" download class="btn btn-primary">Download NRIC ID Image</a>
                                             </p>
                                         <?php } ?>
-                                   </div>
+
+                                    </div>
                                 </div>
                             </div>
                         <?php
@@ -496,7 +497,7 @@ $total_singapore_directors = mysqli_num_rows($result_total_singapore_directors);
                     .save()
                     .then(() => {
                         $('#download').show();
-                });
+                    });
             });
         });
     </script>
@@ -510,4 +511,5 @@ $total_singapore_directors = mysqli_num_rows($result_total_singapore_directors);
     <script src="../assets/js/page/footable-data.js"></script>
     <script src="../assets/bundles/footable-bootstrap/js/footable.js"></script>
 </body>
+
 </html>
