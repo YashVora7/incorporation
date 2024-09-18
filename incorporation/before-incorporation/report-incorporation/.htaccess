@@ -1,0 +1,7 @@
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.*)$ $1.php 
+RewriteRule ^report_rdf/([0-9]+) report_rdf.php?officer_id=$1
