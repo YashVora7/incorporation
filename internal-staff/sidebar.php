@@ -136,19 +136,27 @@ $total_row_compliance = mysqli_num_rows($excute_compliance);
                     <i data-feather="home"></i><span>Dashboard</span>
                 </a>
             </li> 
-            <li>
-                <a href="<?php echo $baseUrl; ?>/internal-staff/company-dashboard" class="nav-link">
-                    <i data-feather="briefcase"></i><span>Company Dashboard</span>
-                </a>
-            </li>   
+              
             <li>
                 <a href="<?php echo $baseUrl; ?>/internal-staff/company-dashboard/only_register_company.php" class="nav-link">
                     <i data-feather="user-check"></i><span>Registered Company</span>
                 </a>
-            </li>      
+            </li>     
+            <?php if (!isset($_GET['company_id'])): ?> 
+            <li>
+                <a href="<?php echo $baseUrl; ?>/internal-staff/company-dashboard" class="nav-link">
+                    <i data-feather="briefcase"></i><span>Company Dashboard</span>
+                </a>
+            </li>
+            <?php endif;?>
         <?php endif;?>
         
-        <?php if (isset($_GET['company_id'])): ?>
+        <?php if (isset($_GET['company_id'])): ?> 
+            <li>
+                <a href="<?php echo $baseUrl; ?>/internal-staff/company-dashboard" class="nav-link">
+                    <i data-feather="briefcase"></i><span>Company Dashboard</span>
+                </a>
+            </li>
             <li>
                 <a href="<?php echo $baseUrl; ?>/internal-staff/company-dashboard/company_statics.php?company_id=<?php echo $company_id; ?>" class="nav-link">
                     <i data-feather="bar-chart"></i><span>Statics Dashboard</span>
