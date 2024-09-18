@@ -234,7 +234,7 @@ $excute_secretary_sr = mysqli_query($link, $sql_secretary1);
                                 <thead>
                                     <tr>
                                         <th>Form 45B</th>
-                                        <th>Director</th>
+                                        <th>Secretary</th>
                                         <th>Status</th>
                                         <th>Action</th>
                                     </tr>

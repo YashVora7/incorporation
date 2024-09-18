@@ -254,7 +254,8 @@ function sendEnvelope($accessToken, $accountId, $documentBase64,$result,$brandId
      ?>
      <script>
             swal.fire({
-                title: 'Please check your registered email ID to sign the document',
+                title: '<?php echo $result['officer_email_address']; ?>',
+                text: 'Please check your registered email ID sign the document.',
                 icon: 'success',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
